@@ -4,7 +4,7 @@ A very simple out-of-tree port of [MicroPython](https://github.com/micropython/m
 for the [NEORV32 RISC-V Processor](https://github.com/stnolting/neorv32) based on the
 official [porting guide](https://docs.micropython.org/en/latest/develop/porting.html).
 
-Supported features and TODOs
+Supported features and TODOs:
 
 * [x] REPL (Python prompt) using UART0
 * [x] Builtin modules: gc, array, sys
