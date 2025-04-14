@@ -46,7 +46,7 @@ neorv32-micropython$ make all
 5. This will generate a single ELF file (`build/firmware.elf`) that can be loaded
 using the processor's on-chip debugger:
 
-```bash
+```
 (gdb) file build/firmware.elf
 A program is being debugged already.
 Are you sure you want to change the file? (y or n) y
