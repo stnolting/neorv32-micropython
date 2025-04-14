@@ -1,7 +1,8 @@
 # NEORV32 MicroPython Port
 
-A very simple port of [MicroPython](https://github.com/micropython/micropython) for the
-[NEORV32 RISC-V Processor](https://github.com/stnolting/neorv32).
+A very simple out-of-tree port of [MicroPython](https://github.com/micropython/micropython)
+for the [NEORV32 RISC-V Processor](https://github.com/stnolting/neorv32) based on the
+official [porting guide](https://docs.micropython.org/en/latest/develop/porting.html).
 
 Supported features and TODOs
 
