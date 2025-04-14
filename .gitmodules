@@ -1,0 +1,8 @@
+[submodule "neorv32"]
+	path = neorv32
+	url = https://github.com/stnolting/neorv32
+	ignore = dirty
+[submodule "micropython"]
+	path = micropython
+	url = https://github.com/micropython/micropython
+	ignore = dirty
