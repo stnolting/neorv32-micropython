@@ -3,8 +3,6 @@
 A simple out-of-tree port of [MicroPython](https://github.com/micropython/micropython)
 for the [NEORV32 RISC-V Processor](https://github.com/stnolting/neorv32) loosely based on
 the upstream [stm32 port](https://github.com/micropython/micropython/tree/master/ports).
-
-
 It is highly recommended to keep the current folder structure as an upstream "official" port
 in the MicroPython repository simply doesn't make sense (yet?). This port is still under development.
 Help and contributions are highly welcomed! :wink:
@@ -58,9 +56,6 @@ LINK build/firmware.elf
 5. The ELF can be loaded via the processor's on-chip debugger (using openOCD + DGB):
 
 ```
-(gdb) monitor reset halt
-JTAG tap: neorv32.cpu tap/device found: 0x00000001 (mfg: 0x000 (<invalid>), part: 0x0000, ver: 0x0)
-(gdb) file build/firmware.elQuit
 (gdb) monitor reset halt
 JTAG tap: neorv32.cpu tap/device found: 0x00000001 (mfg: 0x000 (<invalid>), part: 0x0000, ver: 0x0)
 (gdb) file build/firmware.elf
