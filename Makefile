@@ -1,6 +1,9 @@
 # MicroPython port for the NEORV32 RISC-V Processor
 # Copyright (c) 2025 Stephan Nolting
 
+# qstr definitions (must come before including py.mk)
+QSTR_DEFS += port/qstrdefsport.h
+
 # Include the core environment definitions; this will set $(TOP)
 include micropython/py/mkenv.mk
 
@@ -15,12 +18,20 @@ SRC_S = $(NEORV32_SW_HOME)/common/crt0.S
 
 # Define the required C source files
 SRC_C = \
-	$(wildcard *.c) \
-  $(wildcard $(NEORV32_SW_HOME)/lib/source/*.c) \
+	port/main.c \
+	port/mphalport.c \
+	port/neorv32.c \
+	$(wildcard $(NEORV32_SW_HOME)/lib/source/*.c) \
+	extmod/modmachine.c \
+	extmod/modtime.c \
+	extmod/machine_mem.c \
+	extmod/machine_signal.c \
+	extmod/virtpin.c \
 	shared/readline/readline.c \
 	shared/runtime/gchelper_generic.c \
 	shared/runtime/pyexec.c \
-	shared/runtime/stdout_helpers.c
+	shared/runtime/stdout_helpers.c \
+	shared/timeutils/timeutils.c
 
 # Compiler prefix and ISA configuration
 CROSS_COMPILE ?= riscv-none-elf-
@@ -28,7 +39,7 @@ MARCH         ?= rv32i_zicsr_zifencei
 MABI          ?= ilp32
 
 # Compiler settings
-CFLAGS += -I . -I $(TOP) -I $(BUILD) -I $(NEORV32_SW_HOME)/lib/include
+CFLAGS += -I . -I port -I $(TOP) -I $(NEORV32_SW_HOME)/lib/include -I $(BUILD)
 CFLAGS += -march=$(MARCH) -mabi=$(MABI) -Os -Wall -ffunction-sections -fdata-sections -nostartfiles
 CFLAGS += -mno-fdiv -mstrict-align -mbranch-cost=10 -Wl,--gc-sections -ffp-contract=off -g
 CFLAGS += -T $(NEORV32_SW_HOME)/common/neorv32.ld
@@ -41,7 +52,7 @@ CFLAGS += -Wl,--defsym,__neorv32_ram_base=0x01000000 -Wl,--defsym,__neorv32_ram_
 SRC_QSTR += shared/readline/readline.c shared/runtime/pyexec.c
 
 # Define the required object files
-OBJ  = $(PY_CORE_O) $(addprefix $(BUILD)/, $(SRC_C:.c=.o)) $(addprefix $(BUILD)/, $(SRC_S:.S=.o))
+OBJ = $(PY_CORE_O) $(addprefix $(BUILD)/, $(SRC_C:.c=.o)) $(addprefix $(BUILD)/, $(SRC_S:.S=.o))
 
 # Define the top-level target, the main firmware
 all: $(BUILD)/firmware.elf
