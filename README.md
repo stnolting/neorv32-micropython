@@ -113,7 +113,7 @@ SoC:   0x480ba97b
 
 The CLINT's machine timer is used for wall clock time-keeping. It is initialized with a pre-defined
 start time in `ports/main.c`. To print the current time use `time.localtime()`. This will return
-a tuple with 8 entires showing the current date and time.
+a tuple with 8 entries showing the current date and time.
 
 ```python
 >>> import time
@@ -122,7 +122,7 @@ a tuple with 8 entires showing the current date and time.
 ```
 
 > [!TIP]
-> Additional standard MicroPython modules can be enabled using `#define`s in `mpconfigport.h`.
+> Additional standard MicroPython modules can be enabled in `mpconfigport.h`.
 
 
 ## Port-Specific Modules
