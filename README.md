@@ -1,11 +1,14 @@
 # NEORV32 MicroPython Port
 
+[![neorv32-micropython](https://img.shields.io/github/actions/workflow/status/stnolting/neorv32-micropython/main.yml?branch=main&longCache=true&style=flat-square&label=neorv32-micropython%20build&logo=Github%20Actions&logoColor=fff)](https://github.com/stnolting/neorv32-micropython/actions/workflows/main.yml)
+[![License](https://img.shields.io/github/license/stnolting/neorv32-micropython?longCache=true&style=flat-square&label=License)](https://github.com/stnolting/neorv32-micropython/blob/main/LICENSE)
+
 A simple out-of-tree port of [MicroPython](https://github.com/micropython/micropython)
 for the [NEORV32 RISC-V Processor](https://github.com/stnolting/neorv32) loosely based on
 the upstream [stm32 port](https://github.com/micropython/micropython/tree/master/ports).
 It is highly recommended to keep the current folder structure as an upstream "official" port
 in the MicroPython repository simply doesn't make sense (yet?). This port is still under development.
-Help and contributions are highly welcomed! :wink:
+Help and contributions are very welcome! :wink:
 
 TODOs:
 
@@ -19,9 +22,9 @@ TODOs:
 ## Setup
 
 > [!IMPORTANT]
-> This MicroPython port requires UART0, the CLINT and at least 512kB of ROM (IMEM) and 256kB
-> of RAM (IMEM). The memory layout (base addresses and sizes) can be customized in the Makefile.
-> Make sure to adjust your NEORV32 processor configuration accordingly.
+> This MicroPython port requires UART0, the CLINT, the GPIO controller and at least 512kB of ROM
+> (IMEM) and 256kB > of RAM (IMEM). The memory layout (base addresses and sizes) can be customized
+> in the Makefile. Make sure to adjust your NEORV32 processor configuration accordingly.
 
 1. Clone this repository:
 
