@@ -8,7 +8,7 @@ for the [NEORV32 RISC-V Processor](https://github.com/stnolting/neorv32) loosely
 the upstream [stm32 port](https://github.com/micropython/micropython/tree/master/ports).
 It is highly recommended to keep the current folder structure as an upstream port within
 the MicroPython repository is not available. This port is still under development.
-Help and contributions are very welcome! :wink:
+Help and contributions are very welcome!
 
 TODOs:
 
@@ -43,10 +43,10 @@ neorv32-micropython$ git submodule update
 3. Get a RISC-V GCC toolchain. For example you can use the pre-built toolchain provided
 by [xPack](https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack). Download and
 install the toolchain and add it to your system's `PATH` environment variable. The default
-GCC prefix is `riscv-none-elf-`.
+GCC prefix is `riscv-none-elf-`. This can be adjusted in the Makefile.
 
 4. Compile the NEORV32 MicroPython port. This will generate a single ELF file
-(`build/firmware.elf`). :bulb: A pre-compiled ELF can be downloaded as
+(`build/firmware.elf`). A pre-compiled ELF can be downloaded as
 [CI artifact](https://github.com/stnolting/neorv32-micropython/actions).
 
 ```bash
