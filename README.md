@@ -6,8 +6,8 @@
 A simple out-of-tree port of [MicroPython](https://github.com/micropython/micropython)
 for the [NEORV32 RISC-V Processor](https://github.com/stnolting/neorv32) loosely based on
 the upstream [stm32 port](https://github.com/micropython/micropython/tree/master/ports).
-It is highly recommended to keep the current folder structure as an upstream "official" port
-in the MicroPython repository simply doesn't make sense (yet?). This port is still under development.
+It is highly recommended to keep the current folder structure as an upstream port within
+the MicroPython repository is not available. This port is still under development.
 Help and contributions are very welcome! :wink:
 
 TODOs:
@@ -46,7 +46,8 @@ install the toolchain and add it to your system's `PATH` environment variable. T
 GCC prefix is `riscv-none-elf-`.
 
 4. Compile the NEORV32 MicroPython port. This will generate a single ELF file
-(`build/firmware.elf`):
+(`build/firmware.elf`). :bulb: A pre-compiled ELF can be downloaded as
+[CI artifact](https://github.com/stnolting/neorv32-micropython/actions).
 
 ```bash
 neorv32-micropython$ make all
@@ -198,7 +199,7 @@ output pin 1of the processor's GPIO output to provide a simple heart-beat LED:
 ```
 
 
-## References
+## Resources
 
 Resources that were used for creating this port:
 
