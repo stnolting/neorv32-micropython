@@ -58,8 +58,10 @@ int main(int argc, char **argv) {
   }
 
   // setup peripherals
-  neorv32_uart_setup(NEORV32_UART0, 19200, 0);
-  neorv32_cpu_csr_set(CSR_MSTATUS, 1 << CSR_MSTATUS_MIE);
+  neorv32_uart_setup(NEORV32_UART0, 19200, 0); // no interrupts
+  if (neorv32_gpio_available()) {
+    neorv32_gpio_port_set(0); // clear GPIO.output port if available
+  }
 
   // setup time
   date_t date;
@@ -76,6 +78,9 @@ int main(int argc, char **argv) {
   __systick_inc = neorv32_sysinfo_get_clk() / 100;
   neorv32_clint_mtimecmp_set(neorv32_clint_time_get() + __systick_inc);
   neorv32_cpu_csr_set(CSR_MIE, 1 << CSR_MIE_MTIE);
+
+  // enable interrupts globally
+  neorv32_cpu_csr_set(CSR_MSTATUS, 1 << CSR_MSTATUS_MIE);
 
   // initialize the MicroPython runtime
   mp_stack_ctrl_init();

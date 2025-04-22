@@ -65,14 +65,13 @@ JTAG tap: neorv32.cpu tap/device found: 0x00000001 (mfg: 0x000 (<invalid>), part
 (gdb) file build/firmware.elf
 A program is being debugged already.
 Are you sure you want to change the file? (y or n) y
-Load new symbol table from "build/firmware.elf"? (y or n) y
 Reading symbols from build/firmware.elf...
 (gdb) load
-Loading section .text, size 0x34008 lma 0x0
-Loading section .rodata, size 0x8740 lma 0x34008
-Loading section .data, size 0xb9c lma 0x3c748
-Start address 0x00000000, load size 250596
-Transfer rate: 199 KB/sec, 13922 bytes/write.
+Loading section .text, size 0x34024 lma 0x0
+Loading section .rodata, size 0x873c lma 0x34024
+Loading section .data, size 0xb9c lma 0x3c760
+Start address 0x00000000, load size 250620
+Transfer rate: 190 KB/sec, 13923 bytes/write.
 (gdb) c
 Continuing.
 ```
