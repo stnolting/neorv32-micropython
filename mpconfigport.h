@@ -6,6 +6,7 @@
 #define MICROPY_ERROR_REPORTING                 (MICROPY_ERROR_REPORTING_TERSE)
 #define MICROPY_ENABLE_SCHEDULER                (1)
 #define MICROPY_SCHEDULER_STATIC_NODES          (1)
+#define MICROPY_LONGINT_IMPL                    (MICROPY_LONGINT_IMPL_LONGLONG)
 
 // Fine control over Python builtins, classes, modules, etc
 #define MICROPY_PY_MACHINE_BOOTLOADER           (1)
